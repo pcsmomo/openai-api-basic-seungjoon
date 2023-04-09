@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "01-openai-basic"
+version = "0.1.0"
+description = ""
+authors = ["Noah Kim <dongwoo_333@hanmail.net>"]
+readme = "README.md"
+packages = [{include = "01_openai_basic"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^0.27.4"
+autopep8 = "^2.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
