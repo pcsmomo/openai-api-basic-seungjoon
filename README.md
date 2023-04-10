@@ -62,12 +62,13 @@ export OPENAI_API_KEY={MY_OPENAI_API_KEY} && python 01-text_completion.py
   - GPT-4
   - GPT-3.5
     - text-davinci-003
+    - code-davinci-002
   - GTP-3
     - text-curie-001
     - text-babbage-001
     - text-ada-001
   - ...
-- [Complete Call Parameters](https://platform.openai.com/docs/api-reference/completions/create#completions/)
+- [Complete Call Parameters](https://platform.openai.com/docs/api-reference/completions/create)
   - prompt
   - temperature: creativity
   - max_tokens
@@ -78,5 +79,13 @@ export OPENAI_API_KEY={MY_OPENAI_API_KEY} && python 01-text_completion.py
   - stop: let model know when to stop
     - text_complete: `\n`
     - code_complete: `;` or `#`
+
+### 6. query with code-davinci-002
+
+[Code completion has been deprecated as of March 2023](https://platform.openai.com/docs/guides/code/code-completion-deprecated)
+
+```sh
+openai.error.InvalidRequestError: The model: `code-davinci-002` does not exist
+```
 
 </details>
