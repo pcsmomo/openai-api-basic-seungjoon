@@ -110,4 +110,6 @@ openai.error.InvalidRequestError: The model: `code-davinci-002` does not exist
   - adding or removing keywords
   - try different sentence structure
 
+### 8. recipe suggestion
+
 </details>
