@@ -12,6 +12,7 @@ OpenAI API Basic by Seungjoon Lee, InFlearn
 ### 4. Text Completion API
 
 - [OpenAI Platform](https://platform.openai.com/)
+- [OpenAI API Playground](https://platform.openai.com/playground)
 - [OpenAI API Doc - Text Completion](https://platform.openai.com/docs/guides/completion)
 - [OpenAI Pricing](https://openai.com/pricing)
 
@@ -54,5 +55,28 @@ poetry config --list
 poetry shell
 export OPENAI_API_KEY={MY_OPENAI_API_KEY} && python 01-text_completion.py
 ```
+
+### 5. Completion API Parameters
+
+- [OpenAI API Models](https://platform.openai.com/docs/models/overview)
+  - GPT-4
+  - GPT-3.5
+    - text-davinci-003
+  - GTP-3
+    - text-curie-001
+    - text-babbage-001
+    - text-ada-001
+  - ...
+- [Complete Call Parameters](https://platform.openai.com/docs/api-reference/completions/create#completions/)
+  - prompt
+  - temperature: creativity
+  - max_tokens
+  - top_p: nucleus sampling, an alternative to sampling with temperature
+  - frequency_penalty
+  - presence_penalty
+  - best_of
+  - stop: let model know when to stop
+    - text_complete: `\n`
+    - code_complete: `;` or `#`
 
 </details>
