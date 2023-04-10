@@ -88,4 +88,26 @@ export OPENAI_API_KEY={MY_OPENAI_API_KEY} && python 01-text_completion.py
 openai.error.InvalidRequestError: The model: `code-davinci-002` does not exist
 ```
 
+### 7. Prompt Engineer
+
+#### Reverse Prompt Engineering
+
+- [Blog - Reverse Prompt Engineering for Fun and (no) Profit](https://www.latent.space/p/reverse-prompt-eng)
+- [Jail Break - find a weak point](https://www.jailbreakchat.com/)
+
+#### Best practice
+
+[OpenAI API - Text completion - Prompt design](https://platform.openai.com/docs/guides/completion/prompt-design)
+
+- Be clear and specific
+- Use natural language
+  - for model to capture nuances and subtitles of human language
+- Include relavant keywords or initial response
+- Experiment with different prompt structures
+  - question-based or statement or partial sentence
+- Fine-tune the prompt
+  - adjust wording
+  - adding or removing keywords
+  - try different sentence structure
+
 </details>
