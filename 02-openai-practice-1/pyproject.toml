@@ -10,6 +10,7 @@ packages = [{include = "02-openai-practice-1"}]
 python = "^3.11"
 openai = "^0.27.4"
 autopep8 = "^2.0.2"
+jinja2 = "^3.1.2"
 
 
 [build-system]

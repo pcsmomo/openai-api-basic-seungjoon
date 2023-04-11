@@ -38,7 +38,6 @@ mkdir 01-openapi-basic
 cd 01-openapi-basic
 poetry init
 poetry add openai
-
 ```
 
 ```sh
@@ -110,6 +109,16 @@ openai.error.InvalidRequestError: The model: `code-davinci-002` does not exist
   - adding or removing keywords
   - try different sentence structure
 
-### 8. recipe suggestion
+### 9. Blog Writer
+
+- [bluehost - affordable hosting site](https://www.bluehost.com/)
+- [Blog design template](https://www.bootdey.com/snippets/view/Blog-Detail-App#html)
+
+```sh
+poetry add jinja2
+
+# ./04-blog-writer
+export OPENAI_API_KEY={MY_OPENAI_API_KEY} && python blog-writer.py
+```
 
 </details>
