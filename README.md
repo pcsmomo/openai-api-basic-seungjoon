@@ -140,4 +140,12 @@ poetry add praw
     - name: sentiment-test
     - Type: script
 
+### 11. Auto Docstring
+
+#### Docstring example
+
+- one-line docstrings
+- multi-line docstrings
+- reStructuredText(reST) docstrings
+
 </details>
