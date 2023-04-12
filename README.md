@@ -29,6 +29,9 @@ python --version
 # Python 3.11.3
 poetry --version
 # Poetry (version 1.4.2)
+
+# using .env
+poetry self add poetry-dotenv-plugin
 ```
 
 #### project folder setup
@@ -120,5 +123,21 @@ poetry add jinja2
 # ./04-blog-writer
 export OPENAI_API_KEY={MY_OPENAI_API_KEY} && python blog-writer.py
 ```
+
+## Section 3. OpenAI API Practice 2
+
+### 10. Sentiment Analysis with Reddit API
+
+```sh
+poetry install
+poetry self add poetry-dotenv-plugin
+# poetry add dotenv # cannot install it: not supporting PEP 517 builds.
+poetry add praw
+```
+
+- [Create Reddit API Key](https://www.reddit.com/prefs/apps)
+  - Create an app
+    - name: sentiment-test
+    - Type: script
 
 </details>
