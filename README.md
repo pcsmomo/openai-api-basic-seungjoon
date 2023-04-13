@@ -148,4 +148,8 @@ poetry add praw
 - multi-line docstrings
 - reStructuredText(reST) docstrings
 
+### 12. Translate News
+
+[News API](https://newsapi.org)
+
 </details>
