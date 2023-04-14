@@ -152,4 +152,98 @@ poetry add praw
 
 [News API](https://newsapi.org)
 
+### 13. Fine Tuning
+
+- Any proprietary data can be possible to train the GPT models
+- Fine tuning has already the base model, so it saves resources.
+
+- [OpenAI API - Fine Tuning](https://platform.openai.com/docs/guides/fine-tuning)
+- [tiktoken - Calculate token number](https://github.com/openai/tiktoken)
+  - then we could estimate the cost
+
+#### Data prep tool
+
+##### Calculate token
+
+```sh
+poetry add tiktoken
+```
+
+##### prepare jsonl file
+
+- File format: CSV, TSV, XLSX, JSON or JSONL
+  - JSONL is preferred
+
+```sh
+poetry add pandas
+
+openai tools fine_tunes.prepare_data -f 13-fine-tuning-data.json
+# Analyzing...
+
+# - Your JSON file appears to be in a JSONL format. Your file will be converted to JSONL format
+# - Your file contains 2 prompt-completion pairs. In general, we recommend having at least a few hundred examples. We've found that performance tends to linearly increase for every doubling of the number of examples
+# - All prompts end with suffix ` revenue in 2022?`. This suffix seems very long. Consider replacing with a shorter suffix, such as ` ->`
+# - All prompts start with prefix `What is `
+# - All completions end with suffix ` billion`
+# - The completion should start with a whitespace character (` `). This tends to produce better results due to the tokenization we use. See https://platform.openai.com/docs/guides/fine-tuning/preparing-your-dataset for more details
+
+# Based on the analysis we will perform the following actions:
+# - [Necessary] Your format `JSON` will be converted to `JSONL`
+# - [Recommended] Add a whitespace character to the beginning of the completion [Y/n]: Y
+
+
+# Your data will be written to a new JSONL file. Proceed [Y/n]: Y
+
+# Wrote modified file to `13-fine-tuning-data_prepared.jsonl`
+# Feel free to take a look!
+
+# Now use that file when fine-tuning:
+# > openai api fine_tunes.create -t "13-fine-tuning-data_prepared.jsonl"
+
+# After you’ve fine-tuned a model, remember that your prompt has to end with the indicator string ` revenue in 2022?` for the model to start generating completions, rather than continuing with the prompt. Make sure to include `stop=[" billion"]` so that the generated texts ends at the expected place.
+# Once your model starts training, it'll approximately take 2.47 minutes to train a `curie` model, and less for `ada` and `babbage`. Queue will approximately take half an hour per job ahead of you.
+```
+
+#### Create fine tuned model based on
+
+```sh
+# openai api fine_tunes.create -t <TRAIN_FILE_ID_OR_PATH> -m <BASE_MODEL>
+openai api fine_tunes.create -t 13-02-fine-tuning-data_prepared.jsonl -m babbage
+# Upload progress: 100%|████████████████████████████████████████████████| 149/149 [00:00<00:00, 115kit/s]
+# Uploaded file from 13-02-fine-tuning-data_prepared.jsonl: file-ffC5ivwRCSZtxFCuOM5pD1eU
+# Created fine-tune: ft-ZFYwZVBlLizaqJVHDJ3KWCMY
+# Streaming events until fine-tuning is complete...
+
+# (Ctrl-C will interrupt the stream, but not cancel the fine-tune)
+# [2023-04-15 07:47:20] Created fine-tune: ft-ZFYwZVBlLizaqJVHDJ3KWCMY
+# [2023-04-15 07:47:32] Fine-tune costs $0.00
+# [2023-04-15 07:47:32] Fine-tune enqueued. Queue number: 0
+# [2023-04-15 07:47:33] Fine-tune started
+# [2023-04-15 07:47:53] Completed epoch 1/4
+# [2023-04-15 07:47:53] Completed epoch 2/4
+# [2023-04-15 07:47:54] Completed epoch 3/4
+# [2023-04-15 07:47:54] Completed epoch 4/4
+# [2023-04-15 07:48:15] Uploaded model: babbage:ft-personal-2023-04-14-21-48-15
+# [2023-04-15 07:48:16] Uploaded result file: file-YgcV1vrbi2LYf6cABR5z1y7o
+# [2023-04-15 07:48:16] Fine-tune succeeded
+
+# Job complete! Status: succeeded 🎉
+# Try out your fine-tuned model:
+
+# openai api completions.create -m babbage:ft-personal-2023-04-14-21-48-15 -p <YOUR_PROMPT>
+```
+
+> It takes some time. If you want to check the progress
+
+```sh
+# openai api fine_tunes.follow -i <YOUR_FINE_TUNE_JOB_ID>
+openai api fine_tunes.follow -i ft-ZFYwZVBlLizaqJVHDJ3KWCMY
+```
+
+#### use OpenAI API with my fine tuned model
+
+```sh
+python 13-fine-tuning.py
+```
+
 </details>
