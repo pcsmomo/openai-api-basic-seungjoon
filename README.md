@@ -246,4 +246,33 @@ openai api fine_tunes.follow -i ft-ZFYwZVBlLizaqJVHDJ3KWCMY
 python 13-fine-tuning.py
 ```
 
+### 14. Use Text Embedding and Find Document Similarity
+
+[OpenAI API - Embeddings](https://platform.openai.com/docs/guides/embeddings)
+
+#### Model Hallucination
+
+- Model hallucination referes to **a phenomenon where an AI language model, like ChatGPT, generates output that seems plausible but is not accurate, factual, or relavant to the input it has received.**
+- Causes can be
+  - incomplete, biases or incorrect traning dataset
+  - over-generalized from the training dataset
+  - the model attempts to generate uncertain response
+- Solution
+  - add "answer only if you are 100% centain"
+
+#### Step 1: generate embedded file
+
+[14-fortune_1000_revenue_2022.csv](./03-openai-practice-2/data/14-fortune_1000_revenue_2022.csv)
+
+```sh
+python 14-01-text-embedding.py
+# it will add two columns, "info" and "ada_embedding" to the csv file.
+```
+
+#### Step 2: find the most similar info and ask to chat gpt
+
+```sh
+python 14-02-document-similarity.py
+```
+
 </details>

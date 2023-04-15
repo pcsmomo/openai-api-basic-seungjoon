@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# large data files
+data/14-fortune_1000_revenue_2022.csv
+14-embedded_fortune_1k_revenue.csv
