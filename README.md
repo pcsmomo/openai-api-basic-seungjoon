@@ -287,4 +287,35 @@ python 14-02-document-similarity.py
 
 - [OpenAI API Models](https://platform.openai.com/docs/models/overview)
 
+## Section 4. ChatGPT Plus practice
+
+### 16. create a storybook(ft. Midjourney)
+
+- Chat
+
+### 17. create an avatar (ft Midjourney, Elevenlabs and D-ID)
+
+- [Midjourney - AI Images](https://www.midjourney.com/)
+  - prompt:
+    - imagine a medium shot of white woman wearing a Tshirt, captured with a Nikon D850 and a Nikon AF-s NIKKOR 70-200mm f/2.8E FL ED VR lens, lit with high-key lightning to create a soft and ethereal feel, a shallow depth of field --ar 2:3
+- [ChatGPT - AI Text](https://chat.openai.com/)
+  - prompt:
+    - Write an engaging script for an AI avatar for a youtube video. The main theme will be something followings. "Hi, welcome to codemke Youtube channel, I am not a real human and it is not my voice as you know. I was created with AI tools along with MidJourney. This script was written with ChatGPT Plus. And the voice is from ElevenLabs and the vedio is created with D-ID
+  - result:
+    - AI Avatar: Hi, there! Welcome to the Codemke YouTube channel. I'm not a real human, and as you might have guessed, this isn't my real voice. I was created using advanced AI tools in collaboration with MidJourney.
+    - [The AI avatar looks around the screen, as if taking in its surroundings.]
+    - AI Avatar: And you know what? I'm pretty impressed with what I'm seeing! This channel is all about coding, programming, and everything in between. If you're a tech enthusiast, this is the place to be.
+    - [The AI avatar leans in towards the camera, as if about to share a secret.]
+    - AI Avatar: Now, here's something you might not know. This script you're hearing was actually written with ChatGPT Plus, one of the most advanced language models out there. Pretty cool, right?
+    - [The AI avatar takes a step back and gestures towards the screen.]
+    - AI Avatar: And the voice you're hearing is from ElevenLabs. They specialize in creating realistic and engaging voices for AI avatars like me. And the video itself was created using cutting-edge technology from D-ID.
+    - [The AI avatar smiles.]
+    - AI Avatar: So, what are you waiting for? If you're interested in all things tech, hit that subscribe button and stay tuned for more exciting content. Thanks for watching!
+- [Eleven Labs - AI Speach](https://beta.elevenlabs.io/)
+- [D-ID - AI Talking Avatar](https://www.d-id.com/)
+  - Create video
+  - Upload Voice Audio
+  - Choose Avatar Image
+  - Generate Video
+
 </details>
