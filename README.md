@@ -275,4 +275,16 @@ python 14-01-text-embedding.py
 python 14-02-document-similarity.py
 ```
 
+### 15. ChatGPT API - Chat completion
+
+#### ChatGPT API Role
+
+- sytstem: assign the specific situation and response style
+- user: you
+- assistant: ChatGPT
+
+#### Models
+
+- [OpenAI API Models](https://platform.openai.com/docs/models/overview)
+
 </details>
